@@ -1,0 +1,42 @@
+1. 원격컴에서 터틀봇 연결
+ssh hnurse@"turtlebot_ip"
+123456
+
+2. 원격컴에서 ROS 실행
+roscore
+
+3. 터틀봇 터미널에서 bring up
+cd catkin_ws/
+source devel/setup.bash
+roslaunch turtlebot3_bringup trutlebot3_robot.launch
+
+4. 원격컴에서 조종 teleop
+cd turtlebot3/
+source devel/setup.bash
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+5. bring up remote
+cd turtlebot3/
+source devel/setup.bash
+roslaunch turtlebot3_bringup turtlebot3_remote.launch
+
+6. rviz 로 데이터 시각화
+cd turtlebot3/
+source devel/setup.bash
+rosrun rviz rviz -d`rospack find turtlebot3_decription`/rviz/model.rviz
+
+7. slam
+cd turtlebot3/
+source devel/setup.bash
+roslaunch turtlebot3_slam turtlebot3_slam.launch
+
+8. 지도 저장 (지도 저장 후 slam 종료할 것!!)
+rosrun map_server map_saver -f map
+
+9. navigation (저장한 맵 불러오기)
+cd turtlebot3/
+source devle/setup.bash
+roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/turtlebot3/map.yaml
++ 맵 불러온 이후 터틀봇이 바라보고 있는 방향 및 위치 설정
++ 터틀봇을 조금 회전시키거나 움직여서 화살표 모으기
++ navigate 설정
