@@ -15,7 +15,7 @@ from tensorflow.keras.optimizers import Adam
 import matplotlib.pyplot as plt
 
 # 데이터셋 위치
-image_dir = 'D:\D:\한이음\pills\'
+image_dir = 'D:\한이음\pills'
 
 # 클래스 개수 (아웃풋 개수)
 categories = os.listdir(image_dir)

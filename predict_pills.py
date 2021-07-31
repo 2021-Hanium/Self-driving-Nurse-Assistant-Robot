@@ -20,10 +20,10 @@ def Dataization(img_path):
     img = cv2.resize(img, None, fx=image_w/img.shape[1], fy=image_h/img.shape[0])
     return (img/256)
 
-image_dir= './test_kFood'
+image_dir= './test'
 
 # 출력층 클래스
-categories = ['센트롬','오메가3','타이레놀','루테인']
+categories = ['멀티비타민','오메가3','비타민C','센트롬', '칼슘']
 
 src = []
 name = []
