@@ -23,8 +23,8 @@ classes = len(categories)
 print("pills에는 ", classes, "개의 클래스가 있습니다.")
 
 # 이미지 사이즈 값 설정
-image_width = 32
-image_height = 32
+image_width = 96
+image_height = 96
 
 # 어레이 생성
 x = []
@@ -85,7 +85,7 @@ cnn.add(Conv2D(64, (3, 3), activation = 'relu'))
 cnn.add(MaxPooling2D(pool_size = (2, 2)))
 cnn.add(Dropout(0.25))
 
-cnn.add(Conv2D(64, (3, 3), activation = 'relu'))
+cnn.add(Conv2D(128, (3, 3), activation = 'relu'))
 cnn.add(MaxPooling2D(pool_size = (2, 2)))
 cnn.add(Dropout(0.25))
 
