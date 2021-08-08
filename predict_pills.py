@@ -14,8 +14,8 @@ import matplotlib.pyplot as plt
 
 # 이미지 전처리하는 함수
 def Dataization(img_path):
-    image_w = 96
-    image_h = 96
+    image_w = 64
+    image_h = 64
     img = cv2.imread(img_path)
     img = cv2.resize(img, None, fx=image_w/img.shape[1], fy=image_h/img.shape[0])
     return (img/256)
