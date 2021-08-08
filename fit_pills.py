@@ -23,8 +23,8 @@ classes = len(categories)
 print("pills에는 ", classes, "개의 클래스가 있습니다.")
 
 # 이미지 사이즈 값 설정
-image_width = 96
-image_height = 96
+image_width = 64
+image_height = 64
 
 # 어레이 생성
 x = []
@@ -76,8 +76,8 @@ x_test = x_test.astype(np.float32) / 255.0
 
 # 신경망 모델 #
 cnn=Sequential()
-cnn.add(Conv2D(32, (3, 3), activation = 'relu', input_shape = (image_width, image_height, 3)))
-cnn.add(Conv2D(32, (3, 3), activation = 'relu'))
+cnn.add(Conv2D(64, (3, 3), activation = 'relu', input_shape = (image_width, image_height, 3)))
+cnn.add(Conv2D(64, (3, 3), activation = 'relu'))
 cnn.add(MaxPooling2D(pool_size = (2, 2)))
 cnn.add(Dropout(0.25))
 
