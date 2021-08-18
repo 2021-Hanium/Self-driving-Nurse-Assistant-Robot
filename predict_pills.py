@@ -14,8 +14,8 @@ import matplotlib.pyplot as plt
 
 # 이미지 전처리하는 함수
 def Dataization(img_path):
-    image_w = 96
-    image_h = 96
+    image_w = 64
+    image_h = 64
     img = cv2.imread(img_path)
     img = cv2.resize(img, None, fx=image_w/img.shape[1], fy=image_h/img.shape[0])
     return (img/256)
@@ -23,7 +23,7 @@ def Dataization(img_path):
 image_dir= './test'
 
 # 출력층 클래스
-categories = ['멀티비타민','오메가3','비타민C','센트롬', '칼슘']
+categories = ['오메가3','비타민C','센트롬', '칼슘']
 
 src = []
 name = []
@@ -46,7 +46,7 @@ for file in os.listdir(image_dir):
 
 # 저장된 모델 가져와서 예측
 test = np.array(test)
-model = load_model('pills_params.h5')
+model = load_model('pills_paramss.h5')
 predict = model.predict_classes(test)
 
 for i in range(len(test)):
